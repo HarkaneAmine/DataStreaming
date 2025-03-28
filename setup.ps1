@@ -12,7 +12,7 @@ write-host "Creating Event Hub client app..."
 npm install @azure/event-hubs@5.9.0 -s
 Update-AzConfig -DisplayBreakingChangeWarning $false | Out-Null
 $conStrings = Get-AzEventHubKey -ResourceGroupName $resourceGroupName -NamespaceName $eventNsName -AuthorizationRuleName "RootManageSharedAccessKey"
-$conString = $conStrings.PrimaryConnectionString #Endpoint=sb://simulated-orders-app.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ucH/TSBmYN7A4C7BX/vB+dNkDeTbhwiEE+AEhNJIU3g=
+$conString = $conStrings.PrimaryConnectionString
 $javascript = Get-Content -Path "setup.txt" -Raw
 $javascript = $javascript.Replace("EVENTHUBCONNECTIONSTRING", $conString)
 $javascript = $javascript.Replace("EVENTHUBNAME",$eventHubName)
