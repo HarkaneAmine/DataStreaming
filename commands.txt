@@ -1,0 +1,10 @@
+# load the files
+rm -r dp-203 -f
+git clone https://github.com/HarkaneAmine/DataStreaming dp-203
+
+cd dp-203
+./setup.ps1
+
+
+# run
+node ~/dp-203/orderclient
